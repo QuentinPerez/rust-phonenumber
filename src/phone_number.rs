@@ -15,7 +15,6 @@
 use either::*;
 use std::fmt;
 use std::ops::Deref;
-use std::str::FromStr;
 
 use crate::carrier::Carrier;
 use crate::country;
@@ -139,13 +138,13 @@ pub enum Type {
     Unknown,
 }
 
-impl FromStr for PhoneNumber {
-    type Err = error::Parse;
+// impl FromStr for PhoneNumber {
+//     type Err = error::Parse;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        parser::parse(None, s)
-    }
-}
+//     fn from_str(s: &str) -> Result<Self, Self::Err> {
+//         parser::parse(None, s)
+//     }
+// }
 
 impl fmt::Display for PhoneNumber {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
